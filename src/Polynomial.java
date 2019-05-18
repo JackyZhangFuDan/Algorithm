@@ -6,17 +6,16 @@ public class Polynomial {
 	
 	private String midExpression = null;
 	private Map<Character, Integer> order;
-	public static String endStr = "|";
 	
 	public Polynomial(String expression) {
 		this.midExpression = expression;
 		order = new HashMap<Character, Integer>();
+		order.put('(',0);
 		order.put('+',1);
 		order.put('-',1);
 		order.put('*',2);
 		order.put('/',2);
 		order.put('^',3);
-		order.put('(',0);
 	}
 	
 	/*
@@ -31,6 +30,7 @@ public class Polynomial {
 		Stack<Character> stk = new Stack<Character>();
 		char topChar;
 		char[] expressionCharArray = this.midExpression.toCharArray();
+		
 		for(int i = 0; i < expressionCharArray.length; i++) {
 			char c = expressionCharArray[i];
 			
@@ -51,7 +51,7 @@ public class Polynomial {
 			case '-':
 			case '*':
 			case '/':
-			case '^':
+			case '^': //如果是运算符
 				if(stk.isEmpty()) {
 					stk.add(c);
 				}else {
@@ -70,11 +70,12 @@ public class Polynomial {
 				}
 				break;
 				
-			default: //云算数
+			default: //如果是字符
 				result = result + c;
 			}
 		}
 		
+		//容易忘记，清空栈
 		while(!stk.isEmpty()) {
 			result = result + stk.pop();
 		}
