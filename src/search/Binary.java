@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
- * 这里被搜索的数组必须是排好序的，这是二分法的前提
+ * 这里被搜索的数组必须是排好序的，而且元素不重复。这是二分法的前提
  */
 public class Binary extends SearchBase {
 	

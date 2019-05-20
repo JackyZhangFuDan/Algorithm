@@ -18,6 +18,7 @@ public abstract class SearchBase {
 			return;
 		}
 		
+		System.out.println("searching result: ");
 		for(int r : result){
 			System.out.println(r);
 		}
