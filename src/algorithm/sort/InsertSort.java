@@ -1,7 +1,7 @@
-package sort;
+package algorithm.sort;
 
 /*
- * 插入排序是不稳定的排序算法
+ * �?�入排�?是�?稳定的排�?算法
  */
 public class InsertSort {
 	
@@ -19,7 +19,7 @@ public class InsertSort {
 	}
 	
 	/*
-	 * 自己的写法，需要另一个数组，稍显啰嗦
+	 * 自己的写法，需�?�?�一个数组，�?显啰嗦
 	 */
 	public void sort() {
 		this.sorted = new Character[this.source.length];

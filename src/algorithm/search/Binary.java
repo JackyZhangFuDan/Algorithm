@@ -1,10 +1,10 @@
-package search;
+package algorithm.search;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /*
- * 这里被搜索的数组必须是排好序的，而且元素不重复。这是二分法的前提
+ * 这里被�?�索的数组必须是排好�?的，而且元素�?�?�?。这是二分法的�?�??
  */
 public class Binary extends SearchBase {
 	

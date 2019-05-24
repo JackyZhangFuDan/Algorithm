@@ -1,10 +1,11 @@
+package algorithm.pattern;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 /*
-题目：给定两个字符串s1和s2，找出s1和s2的最大共有子串。
-共有子串是指一个字符串z，它既是s1的子串又是s2的子串，并且没有其它这样的子串比它更长
+题目：给定两个字符串s1和s2，找出s1和s2的最大共有�?串。
+共有�?串是指一个字符串z，它既是s1的�?串�?�是s2的�?串，并且没有其它这样的�?串比它更长
 */
 
 public class LongestSubSeq {

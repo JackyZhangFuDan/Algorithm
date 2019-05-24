@@ -1,3 +1,4 @@
+package languagefeature;
 class Professor1  implements Cloneable   
 {    
      String name;    
@@ -24,7 +25,7 @@ class Professor1  implements Cloneable
 
 class Student1 implements Cloneable    
 {    
-     String name;// 常量对象。    
+     String name;// 常�?对象。    
      int age;    
      Professor1 p;// 学生1和学生2的引用值都是一样的。    
      Student1(String name,int age,Professor1 p)    
@@ -58,6 +59,6 @@ public class JavaDeepClone {
       Student1 s2=(Student1)s1.clone();    
       s2.p.name="lisi";    
       s2.p.age=30;    
-      System.out.println("name="+s1.p.name+","+"age="+s1.p.age);//学生1的教授成为lisi,age为30。    
+      System.out.println("name="+s1.p.name+","+"age="+s1.p.age);//学生1的教授�?为lisi,age为30。    
     }   
 }

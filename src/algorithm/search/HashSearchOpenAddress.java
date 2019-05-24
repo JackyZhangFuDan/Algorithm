@@ -1,11 +1,11 @@
-package search;
+package algorithm.search;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /*
- * 用开式寻址法解决Hash表的冲突问题，实现它的插入，删除和查找
- * Hash函数选取一个简单的取余数算法: 除以13取余数；并假设数组内容为小写字母
+ * 用开�?寻�?�法解决Hash表的冲�?问题，实现它的�?�入，删除和查找
+ * Hash函数选�?�一个简�?�的�?�余数算法: 除以13�?�余数；并�?�设数组内容为�?写字�?
  */
 public class HashSearchOpenAddress extends SearchBase {
 	private Character deleteChar = '1';

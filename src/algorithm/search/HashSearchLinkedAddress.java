@@ -1,12 +1,12 @@
-package search;
+package algorithm.search;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 /*
- * 用拉链法解决Hash存储时候的冲突问题，实现基于它的插入，删除和查找
- * 选取一个简单的Hash函数：除以13取余数，并假设数组元素为小写字母
+ * 用拉链法解决Hash存储时候的冲�?问题，实现基于它的�?�入，删除和查找
+ * 选�?�一个简�?�的Hash函数：除以13�?�余数，并�?�设数组元素为�?写字�?
  */
 public class HashSearchLinkedAddress extends SearchBase {
 	private int arraySize = 20;

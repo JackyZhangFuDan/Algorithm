@@ -1,3 +1,4 @@
+package algorithm.pattern;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -7,9 +8,9 @@ import java.util.Map;
 public class LongestSubSeq2 {
 	
 	/*
-	题目：找两个字符串的最大共有子序列。
-	字符串S1和字符串S2共有子序列Z是指：Z中所有字符都在S1与S2中出现，并且Z的字符顺序与它们出现在S1和S2中时先后顺序一致，但Z不必是S1和S2的连续子串。
-	找出最大共有序列就是找出最长的Z 
+	题目：找两个字符串的最大共有�?�?列。
+	字符串S1和字符串S2共有�?�?列Z是指：Z中所有字符都在S1与S2中出现，并且Z的字符顺�?与它们出现在S1和S2中时先�?�顺�?一致，但Z�?必是S1和S2的连续�?串。
+	找出最大共有�?列就是找出最长的Z 
 	 */
 	private int recursiveCount = 0;
 	
@@ -34,10 +35,10 @@ public class LongestSubSeq2 {
 	/*
 	方法1: 效率差
 	关键：
-	- 如果S1的最后一个字符和S2的最后一个字符相等，那么结果就是最后一个字符+去除最后一个字符的S1和S2的最大共有序列
-	- 如果S1的最后一个字符和S2的最后一个字符不相等，那么就过就是longest（S1，S2去除最后一个字符）与longest（S1去除最后一个字符，S2）中长的那个；
-	用递归可以解决.
-	为什么从最后一个字符的相等开始？因为如果最后字符相等，那它必定是最长共有序列的最后一个，这点很关键
+	- 如果S1的最�?�一个字符和S2的最�?�一个字符相等，那么结果就是最�?�一个字符+去除最�?�一个字符的S1和S2的最大共有�?列
+	- 如果S1的最�?�一个字符和S2的最�?�一个字符�?相等，那么就过就是longest（S1，S2去除最�?�一个字符）与longest（S1去除最�?�一个字符，S2）中长的那个；
+	用递归�?�以解决.
+	为什么从最�?�一个字符的相等开始？因为如果最�?�字符相等，那它必定是最长共有�?列的最�?�一个，这点很关键
 	*/
 	private List<String> getLongestSubSeq(String s1, String s2){
 		List<String> results = new ArrayList<String>();
@@ -90,7 +91,7 @@ public class LongestSubSeq2 {
 	
 	/*
 	方法二：效率高
-	在方法一的基础上，我们会发现字序列longest（S1去除最后一个字符，S2去除最后一个字符）会被重复计算，非常耗时，那么可不可以把计算结果记下来避免？
+	在方法一的基础上，我们会�?�现字�?列longest（S1去除最�?�一个字符，S2去除最�?�一个字符）会被�?�?计算，�?�常耗时，那么�?��?�?�以把计算结果记下�?��?��?？
 	 */
 	private Map<String, List<String>> cachedResult = new HashMap();
 	private List<String> getLongestSubSeq2(String s1, String s2){
