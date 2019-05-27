@@ -1,4 +1,7 @@
 package algorithm.sort;
+
+import algorithm.search.SearchBase;
+
 /*
  * 思路：先给出一个分组方案，是一个证书数组，元素大小递减，保证最后一个元素是1；每个分组规则对应一轮操作。
  * 在一轮操作中，我们以本轮分组规则为下标间隔把待排序数组分组，每组都进行插入排序。
@@ -6,19 +9,19 @@ package algorithm.sort;
  * 而是轮流做各个组的一次插入，这样会为算法带来简便
  * Shell排序不稳定
  */
-public class ShellSort {
-	private char[] source;
+public class ShellSort extends SortBase{
 	private int[] groupSize;
 	
 	public ShellSort(int[] groupSize, String s) {
+		super(s);
 		if(groupSize[groupSize.length-1] != 1) {
 			System.out.println("The last group size must be 1.");
 			return;
 		}
 		this.groupSize = groupSize;
-		this.source = s.toCharArray();
 	}
 	
+	@Override
 	public void sort() {
 		for(int i = 0; i < this.groupSize.length; i++) {
 			int gSize = this.groupSize[i];
@@ -30,13 +33,6 @@ public class ShellSort {
 				}
 				this.source[k+gSize] = currentChar;
 			}
-		}
-	}
-	
-	private void printResult() {
-		System.out.println("Sort result:");
-		for(int i = 0; i < this.source.length; i++) {
-			System.out.print(this.source[i]);
 		}
 	}
 	

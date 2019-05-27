@@ -5,14 +5,13 @@ package algorithm.sort;
  * 在每次移动时，记录一下最后一个发生位置变动的元素下标，这个元素以前都是排好序的了
  * 冒泡排序是稳定的
  */
-public class BubbleSort {
-	
-	private char[] source;
+public class BubbleSort extends SortBase {
 	
 	public BubbleSort(String s) {
-		this.source = s.toCharArray();
+		super(s);
 	}
-	
+
+	@Override
 	public void sort() {
 		
 		int end = 0;
@@ -28,13 +27,6 @@ public class BubbleSort {
 				}
 			}
 			end = lastMovedIdx;
-		}
-	}
-	
-	private void printResult() {
-		System.out.println("Sort result:");
-		for(int i = 0; i < this.source.length; i++) {
-			System.out.print(this.source[i]);
 		}
 	}
 	

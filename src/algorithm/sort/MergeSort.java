@@ -3,13 +3,13 @@ package algorithm.sort;
 /*
  * 思路：做几次操作，每次操作让相邻的1，2，4，8.。。n/2个元素为一组，每组都是排好序的，然后两辆合并排序
  */
-public class MergeSort {
-	private char[] source;
+public class MergeSort extends SortBase {
 	
 	public MergeSort(String s) {
-		this.source = s.toCharArray();
+		super(s);
 	}
-	
+
+	@Override
 	public void sort() {
 		char[] result = new char[this.source.length];
 		
@@ -61,13 +61,6 @@ public class MergeSort {
 			
 			this.source = result.clone();
 			length = 2 * length;
-		}
-	}
-	
-	public void printResult() {
-		System.out.println("Sort result:");
-		for(int i = 0; i < this.source.length; i++) {
-			System.out.print(this.source[i]);
 		}
 	}
 	
