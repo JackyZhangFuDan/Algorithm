@@ -1,15 +1,16 @@
 package algorithm.sort;
 
 /*
- * �?�入排�?是�?稳定的排�?算法
+ * 思路：数组头部是排好序的区域，后部是未排序区域，进行n次操作，每一次操作之后，前部排好序的区域扩大一个元素；后部未排序的区域缩小一个元素。
+ * 每次操作时，把未排序部分的第一个元素拿来，把它插入到排好序的区域的合适位置
+ * 插入排序是稳定的
  */
-public class InsertSort {
+public class InsertSort extends SortBase  {
 	
-	private Character[] source;
-	private Character[] sorted;
+	private char[] sorted;
 	
-	public InsertSort(Character[] s) {
-		this.source = s;
+	public InsertSort(String s) {
+		super(s);
 	}
 	
 	public void printResult() {
@@ -19,10 +20,30 @@ public class InsertSort {
 	}
 	
 	/*
-	 * 自己的写法，需�?�?�一个数组，�?显啰嗦
+	 * 书中给出的算法，很精炼
 	 */
+	@Override
 	public void sort() {
-		this.sorted = new Character[this.source.length];
+		int i, j;
+		for(i = 1; i < this.source.length; i++) {
+			char currentChar = this.source[i];
+			for(j = i - 1; j >= 0; j--) {
+				if(this.source[j] > currentChar) {
+					this.source[j+1] = this.source[j];
+				}else {
+					break;
+				}
+			}
+			this.source[j+1] = currentChar;
+		}
+		this.sorted = this.source;
+	}
+	
+	/*
+	 * 自己的写法，需�?�?�一个数组，�?显啰嗦
+	 */
+	public void sortSelf() {
+		this.sorted = new char[this.source.length];
 		this.sorted[0] = this.source[0];
 		
 		for(int i = 1 ; i < this.source.length; i++) {
@@ -42,28 +63,9 @@ public class InsertSort {
 		}
 	}
 	
-	/*
-	 * 书中给出的算法，很精炼
-	 */
-	public void sortBook() {
-		int i, j;
-		for(i = 1; i < this.source.length; i++) {
-			char currentChar = this.source[i];
-			for(j = i - 1; j >= 0; j--) {
-				if(this.source[j] > currentChar) {
-					this.source[j+1] = this.source[j];
-				}else {
-					break;
-				}
-			}
-			this.source[j+1] = currentChar;
-		}
-		this.sorted = this.source;
-	}
-	
 	public static void main(String[] args) {
-		InsertSort is = new InsertSort(new Character[] {'d','c','b','a','e','z','p'});
-		is.sortBook();
+		InsertSort is = new InsertSort("dcbaezp");
+		is.sort();
 		is.printResult();
 	}
 
