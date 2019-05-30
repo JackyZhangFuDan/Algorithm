@@ -8,6 +8,7 @@ import java.util.Map;
 /*
  * 思路： 先按照最低位把各项分队，然后从代表小的那个队开始把分了队的元素收集起来，
  * 依次完成从低位到高位的分队和收集工作，排序完成
+ * 基数排序都是稳定的
  */
 public class RadixSortLastSignificantDigitalFirst {
 	

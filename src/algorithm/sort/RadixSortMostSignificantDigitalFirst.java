@@ -7,6 +7,7 @@ import java.util.List;
  * 假设待排序数组的每一个元素都是0～9数字构成的字符串（用数组表示），字符串数组长度一样，如果高位没有数字则该位为空字符
  * 思路：先按照高位排序，然后把高位相等的元素放一块进行递归排序
  * Java里面比较繁琐的是没有指针，所以空间浪费会有一些
+ * 基数排序都是稳定的
  */
 public class RadixSortMostSignificantDigitalFirst{
 	
