@@ -8,7 +8,7 @@ import java.util.List;
  * 思路：先按照高位排序，然后把高位相等的元素放一块进行递归排序
  * Java里面比较繁琐的是没有指针，所以空间浪费会有一些
  */
-public class RadixSort {
+public class RadixSortMostSignificantDigitalFirst{
 	
 	public List<Character[]> sort(List<Character[]> source, int radixLength, int currentPosition){
 		List<Character[]> result = null;
@@ -81,7 +81,7 @@ public class RadixSort {
 		source.add(new Character[]{'9','6','3'});
 		source.add(new Character[]{'2','8','0'});
 		source.add(new Character[]{' ',' ','9'});
-		RadixSort rs = new RadixSort();
+		RadixSortMostSignificantDigitalFirst rs = new RadixSortMostSignificantDigitalFirst();
 		List<Character[]> result = rs.sort(source, 3, 1);
 		for(Character[] item : result) {
 			for(Character c : item) {
