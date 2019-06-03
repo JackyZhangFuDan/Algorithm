@@ -1,5 +1,6 @@
 package algorithm.tree;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TreeCompositeNode<T> implements TreeNode<T> {
@@ -22,6 +23,14 @@ public class TreeCompositeNode<T> implements TreeNode<T> {
 		return false;
 	}
 	
+	public int childrenCount() {
+		if(this.childs == null) {
+			return 0;
+		}else {
+			return this.childs.size();
+		}
+	}
+	
 	public TreeNode<T> getChild(int index){
 		if(this.childs == null) {
 			return null;
@@ -32,6 +41,14 @@ public class TreeCompositeNode<T> implements TreeNode<T> {
 		}
 		
 		return this.childs.get(index);
+	}
+	
+	public boolean addChild(TreeNode<T> child) {
+		if(this.childs == null) {
+			this.childs = new ArrayList<TreeNode<T>>();
+		}
+		this.childs.add(child);
+		return true;
 	}
 	
 	public boolean removeChild(int index) {
