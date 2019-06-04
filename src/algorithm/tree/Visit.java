@@ -8,6 +8,7 @@ public interface Visit {
 				           28
 			  	 29                       30
 		  31                         32        33       34
+		35  36
 		 */
 		
 		TreeCompositeNode<Integer> cn = new TreeCompositeNode<Integer>();
@@ -15,9 +16,15 @@ public interface Visit {
 		TreeCompositeNode<Integer> cn1 = new TreeCompositeNode<Integer>();
 		cn1.setData(29);
 		cn.addChild(cn1);
-		TreeLeafNode<Integer> cn11 = new TreeLeafNode<Integer>();
+		TreeCompositeNode<Integer> cn11 = new TreeCompositeNode<Integer>();
 		cn11.setData(31);
 		cn1.addChild(cn11);
+		TreeLeafNode<Integer> cn111 = new TreeLeafNode<Integer>();
+		cn111.setData(35);
+		cn11.addChild(cn111);
+		TreeLeafNode<Integer> cn112 = new TreeLeafNode<Integer>();
+		cn112.setData(36);
+		cn11.addChild(cn112);
 		TreeCompositeNode<Integer> cn2 = new TreeCompositeNode<Integer>();
 		cn2.setData(30);
 		cn.addChild(cn2);
