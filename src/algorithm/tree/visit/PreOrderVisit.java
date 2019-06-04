@@ -1,6 +1,9 @@
-package algorithm.tree;
+package algorithm.tree.visit;
 
 import java.util.Stack;
+
+import algorithm.tree.TreeCompositeNode;
+import algorithm.tree.TreeNode;
 
 /*
  * 前序遍历：先打印当前节点，然后把其子结点入栈，右子节点先入，左子结点最后入

@@ -1,6 +1,9 @@
-package algorithm.tree;
+package algorithm.tree.visit;
 
 import java.util.Stack;
+
+import algorithm.tree.TreeCompositeNode;
+import algorithm.tree.TreeNode;
 
 /*
  * 遍历树：先子结点从左到右，再访问自己。对应于二叉树的后序遍历

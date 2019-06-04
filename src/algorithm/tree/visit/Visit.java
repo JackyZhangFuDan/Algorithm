@@ -1,4 +1,8 @@
-package algorithm.tree;
+package algorithm.tree.visit;
+
+import algorithm.tree.TreeCompositeNode;
+import algorithm.tree.TreeLeafNode;
+import algorithm.tree.TreeNode;
 
 public interface Visit {
 	public <T> void visit(TreeNode<T> root);

@@ -1,6 +1,9 @@
-package algorithm.tree;
+package algorithm.tree.visit;
 
 import java.util.LinkedList;
+
+import algorithm.tree.TreeCompositeNode;
+import algorithm.tree.TreeNode;
 
 /*
  * 层序遍历：先打印根节点，然后把它的子结点全部入队；然后打印队列中前部同层次的节点，并把它们的子结点入列
