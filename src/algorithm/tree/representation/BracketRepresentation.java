@@ -15,12 +15,19 @@ public class BracketRepresentation {
 		}
 		
 		char[] characters = expression.toCharArray();
+		
 		TreeNode<Character> root = null;
+		if(characters.length == 1) {
+			root = new TreeLeafNode<Character>();
+			root.setData(characters[0]);
+			return root;
+		}else {
+			root = new TreeCompositeNode<Character>();
+			root.setData(characters[0]);
+		}
 		
 		Stack<TreeNode<Character>> stack = new Stack<TreeNode<Character>>();
-		
-		char previousChar = characters[0];
-		TreeCompositeNode parent ;
+		TreeNode<Character> currentNode = root ;
 		
 		for(int i = 1; i < characters.length; i++) {
 			char currentChar = characters[i];
@@ -28,37 +35,26 @@ public class BracketRepresentation {
 			
 			switch(currentChar) {
 			case '(':
-				node = new TreeCompositeNode<Character>();
-				node.setData(previousChar);
-				if(!stack.isEmpty()) {
-					parent = (TreeCompositeNode) stack.peek();
-					parent.addChild(node);
-				}
-				stack.push(node);
+				stack.push(currentNode);
 				break;
 			case ',':
-				if(previousChar == ' ') break;
-				node = new TreeLeafNode<Character>();
-				node.setData(previousChar);
-				parent = (TreeCompositeNode) stack.peek();
-				parent.addChild(node);
+				TreeCompositeNode<Character> parent = (TreeCompositeNode) stack.peek();
+				parent.addChild(currentNode);
 				break;
 			case ')':
-				node = new TreeLeafNode<Character>();
-				node.setData(previousChar);
 				parent = (TreeCompositeNode) stack.pop();
-				parent.addChild(node);
-				previousChar = ' ';//一个特殊字符，考虑测试数据中h后的第一个逗号情况
-				root = parent;
+				parent.addChild(currentNode);
+				currentNode = parent;
 				break;
 			default:
-				previousChar = currentChar;
+				if(i == characters.length - 1 || characters[i+1] != '(') {
+					currentNode = new TreeLeafNode<Character>();
+				}else {
+					currentNode = new TreeCompositeNode<Character>();
+				}
+				currentNode.setData(characters[i]);
+				break;
 			}
-		}
-		
-		if(root == null) {//括号表达式只有一个字符：例如 ‘A'，代表根，那么它是不会被上面循环处理到的
-			root = new TreeLeafNode<Character>();
-			root.setData(previousChar);
 		}
 		
 		return root;
@@ -66,9 +62,14 @@ public class BracketRepresentation {
 	
 	public static void main(String[] args) {
 		BracketRepresentation br = new BracketRepresentation();
-		TreeNode<Character> root = br.toStandardTree("A(b,c(e,g,h),d(x,y(p,q),z)");
+		String expression = "A(b,c(e,g,h),d(x,y(p,q),z))";
+		System.out.println("Bracket expression: " );
+		System.out.println(expression);
+		
+		TreeNode<Character> root = br.toStandardTree(expression);
 		PreOrderVisit pov = new PreOrderVisit();
+		
+		System.out.println("Pre ordered printed nodes of the constructed tree:");
 		pov.visit(root);
 	}
-
 }

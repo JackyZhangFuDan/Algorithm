@@ -7,6 +7,7 @@ import java.util.Stack;
 import algorithm.tree.TreeCompositeNode;
 import algorithm.tree.TreeLeafNode;
 import algorithm.tree.TreeNode;
+import algorithm.tree.visit.PreOrderVisit;
 
 public class PreorderWithLevelRepresentation {
 	
@@ -90,12 +91,26 @@ public class PreorderWithLevelRepresentation {
 		data.level = 3;
 		preorderWithLevel.add(data);
 		
+		System.out.println("Pre-ordered tree nodes with level number:");
+		for(DataWithLevel dl : preorderWithLevel) {
+			System.out.println(dl);
+		}
+		
 		PreorderWithLevelRepresentation ins = new PreorderWithLevelRepresentation();
 		TreeNode<Integer> root = ins.toStandardTree(preorderWithLevel);
+		
+		PreOrderVisit pov = new PreOrderVisit();
+		System.out.println("Pre-ordered printed nodes of the constructed tree:");
+		pov.visit(root);
 	}
 	
 	public static class DataWithLevel{
 		public Integer data;
 		public Integer level;
+		
+		@Override
+		public String toString() {
+			return "data:" + data + " level:" + level;
+		}
 	}
 }
