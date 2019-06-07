@@ -1,7 +1,9 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
-
+/*
+ * 多项式中缀转后缀的算法
+ */
 public class Polynomial {
 	
 	private String midExpression = null;
