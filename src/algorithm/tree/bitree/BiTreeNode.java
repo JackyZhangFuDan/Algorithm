@@ -6,6 +6,8 @@ public class BiTreeNode<T> {
 	private BiTreeNode<T> leftNode;
 	private BiTreeNode<T> rightNode;
 	
+	private int weight; //it is used in some scenarios, e.g. huffman tree
+	
 	public T getData() {
 		return data;
 	}
@@ -37,5 +39,13 @@ public class BiTreeNode<T> {
 
 	public String toString() {
 		return data.toString();
+	}
+
+	public int getWeight() {
+		return weight;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
 	}
 }
