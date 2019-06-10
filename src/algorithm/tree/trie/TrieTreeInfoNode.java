@@ -8,26 +8,20 @@ public class TrieTreeInfoNode implements TrieTreeNode {
 		return true;
 	}
 	
-	public void setInformation(String info) {
-		if(info == null || info.length() == 0) {
-			return;
-		}
-		this.info = info.toCharArray();
-	}
-	
-	public void setInformation(Character[] info) {
-		this.info = String.valueOf(info).toCharArray();
-	}
-	
-	public Character[] getInformation() {
-		if(this.info == null || this.info.length <=0) {
-			return null;
-		}
+	@Override
+	public void setInformation(char[] info) {
+		if(info == null || info.length == 0) return;
 		
-		Character[] result = new Character[this.info.length];
-		for(int i = 0; i < this.info.length; i++) {
-			result[i] = this.info[i];
+		this.info = new char[info.length];
+		for(int i = 0; i < info.length; i++){
+			this.info[i] = info[i];
 		}
-		return result;
 	}
+	
+	@Override
+	public char[] getInformation() {
+		return info;
+	}
+
+	
 }
