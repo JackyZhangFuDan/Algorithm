@@ -1,10 +1,16 @@
 package algorithm.tree.trie;
 
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Stack;
 
+/*
+ * 一个Trie结构，实现了插入，删除，查找操作
+ * 为了处理方便，我们假设空Trie的状态时只有一个根节点，它有27个指针的Branch节点，都指向空。这使得根节点与其它Branch节点不太一样：其它节点都必须有两个及以上子结点，否则要被移除的。
+ */
 public class TrieTree {
 	
-	private TrieTreeBranchNode root = null;
+	private TrieTreeBranchNode root = new TrieTreeBranchNode();
 	
 	public TrieTreeNode find(char[] information) {
 		TrieTreeNode node = root;
@@ -57,7 +63,7 @@ public class TrieTree {
 		iNode.setInformation(information);
 		
 		if(node == null) { //
-			if(parent == null) {
+			if(parent == null) { //其实由于我们对Trie初始状态的假设，这里永远都不会是空
 				root = new TrieTreeBranchNode();
 				root.add(information[0], iNode);
 			}else {
@@ -109,6 +115,83 @@ public class TrieTree {
 		return true;
 	}
 	
+	public boolean remove(char[] information) {
+		if(information == null || information.length == 0) {
+			return false;
+		}
+		
+		TrieTreeNode node = root;
+		Stack<TrieTreeBranchNode> parents = new Stack<TrieTreeBranchNode>();
+		int index = 0;
+		while(node != null && !node.isInformation()) {
+			TrieTreeBranchNode nodeTemp = (TrieTreeBranchNode) node;
+			if(index == information.length) {
+				node = nodeTemp.get('0');
+			}else {
+				node = nodeTemp.get(information[index]);
+			}
+			
+			parents.push( nodeTemp);
+			index++;
+		}
+		
+		if(node == null) {
+			return false;
+		}
+		
+		if(! String.valueOf(node.getInformation()).equals(String.valueOf(information))) {
+			return false;
+		}
+		
+		Character c = this.calculateLinkedCharacter(parents.peek(), node);
+		parents.peek().add(c,null);
+		
+		TrieTreeNode theOnlyInfoNode = null;
+		List<TrieTreeNode> children = parents.peek().getSubNodes();
+		
+		if(children.size() == 1 && children.get(0).isInformation()) {
+			theOnlyInfoNode = children.get(0);
+			c = this.calculateLinkedCharacter(parents.peek(), theOnlyInfoNode);
+		}else {
+			return true;
+		}
+		
+		while(!parents.isEmpty()) {
+			parents.peek().add(c, null);
+			children = parents.peek().getSubNodes();
+			
+			if(children.size() >=1) {
+				break;
+			}else {
+				if(parents.peek().getInformation() == null) {
+					break;
+				}else {
+					TrieTreeBranchNode parent = parents.pop();
+					c = this.calculateLinkedCharacter(parents.peek(), parent);
+				}
+			}
+		}
+		
+		TrieTreeBranchNode parent = parents.pop();
+		parent.add(c, theOnlyInfoNode);
+		
+		return true;
+	}
+	
+	private Character calculateLinkedCharacter(TrieTreeBranchNode parent, TrieTreeNode child) {
+		String s1 = String.valueOf(child.getInformation());
+		String s2 = "";
+		if(parent.getInformation() != null) {
+			s2 = String.valueOf(parent.getInformation());
+		}
+		
+		if(s1.equals(s2)) {
+			return '0';
+		}else {
+			return s1.toCharArray()[s2.length()];
+		}
+	}
+	
 	/*
 	 * 打印trie当前形态
 	 */
@@ -149,6 +232,27 @@ public class TrieTree {
 		tt.add("head".toCharArray());
 		tt.add("headache".toCharArray());
 		
+		System.out.println("After construction:");
+		tt.printTree();
+		
+		tt.remove("headache".toCharArray());
+		System.out.println("\nAfter deleting headache:");
+		tt.printTree();
+		
+		tt.remove("heap".toCharArray());
+		System.out.println("\nAfter deleting heap:");
+		tt.printTree();
+		
+		tt.remove("computer".toCharArray());
+		System.out.println("\nAfter deleting computer:");
+		tt.printTree();
+		
+		tt.remove("head".toCharArray());
+		System.out.println("\nAfter deleting head:");
+		tt.printTree();
+		
+		System.out.println("\nAfter adding hello:");
+		tt.add("hello".toCharArray());
 		tt.printTree();
 	}
 
