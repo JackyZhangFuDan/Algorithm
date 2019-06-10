@@ -115,7 +115,10 @@ public class TrieTree {
 	public void printTree(){
 		LinkedList<TrieTreeNode> queue = new LinkedList<TrieTreeNode>();
 		queue.offer(this.root);
+		int level = 0;
+		
 		while(!queue.isEmpty()){
+			System.out.print("Nodes of level " + level + ": ");
 			int len = queue.size();
 			for(int i = 0; i < len; i++){
 				TrieTreeNode node = queue.poll();
@@ -134,6 +137,7 @@ public class TrieTree {
 				}
 			};
 			System.out.println();
+			level++;
 		}
 	}
 	
