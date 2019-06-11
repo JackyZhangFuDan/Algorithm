@@ -6,7 +6,9 @@ import java.util.Stack;
 
 /*
  * Trie结构，包含了查找，删除和加入操作
- * 
+ * 这里的Trie和教材上一样，但它和Trie的标准定义在具体构成上稍有不同，Trie的标准定义可以参见
+ * https://blog.csdn.net/lisonglisonglisong/article/details/45584721
+ * 但本质上这里的Trie依然是Trie
  */
 public class Trie {
 	
