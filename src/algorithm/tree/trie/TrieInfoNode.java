@@ -1,6 +1,6 @@
 package algorithm.tree.trie;
 
-public class TrieTreeInfoNode implements TrieTreeNode {
+public class TrieInfoNode implements TrieNode {
 	private char[] info;
 	
 	@Override

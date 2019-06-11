@@ -6,17 +6,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class TrieTreeBranchNode implements TrieTreeNode {
+public class TrieBranchNode implements TrieNode {
 	private char[] info;
-	private Map<Character, TrieTreeNode> index;
+	private Map<Character, TrieNode> index;
 	
 	@Override
 	public boolean isInformation() {
 		return false;
 	}
 	
-	public TrieTreeBranchNode() {
-		this.index = new HashMap<Character, TrieTreeNode>();
+	public TrieBranchNode() {
+		this.index = new HashMap<Character, TrieNode>();
 		this.index.put('0', null);
 		this.index.put('a', null);
 		this.index.put('b', null);
@@ -49,18 +49,18 @@ public class TrieTreeBranchNode implements TrieTreeNode {
 		
 	};
 
-	public boolean add(Character ch, TrieTreeNode node) {
+	public boolean add(Character ch, TrieNode node) {
 		this.index.put(ch,node);
 		return true;
 	}
 	
-	public TrieTreeNode get(Character ch) {
+	public TrieNode get(Character ch) {
 		return this.index.get(ch);
 	}
 	
-	public List<TrieTreeNode> getSubNodes(){
-		List<TrieTreeNode> result = new ArrayList<TrieTreeNode>();
-		for(Map.Entry<Character, TrieTreeNode> entry: this.index.entrySet()){
+	public List<TrieNode> getSubNodes(){
+		List<TrieNode> result = new ArrayList<TrieNode>();
+		for(Map.Entry<Character, TrieNode> entry: this.index.entrySet()){
 			if(entry.getValue() != null){
 				result.add(entry.getValue());
 			}
