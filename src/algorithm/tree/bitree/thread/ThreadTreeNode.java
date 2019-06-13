@@ -1,4 +1,4 @@
-package algorithm.tree.thread;
+package algorithm.tree.bitree.thread;
 
 public class ThreadTreeNode {
 	public char data;
