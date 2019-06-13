@@ -7,49 +7,50 @@
 	* [KMP算法](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/patternmatch/KMP.java)
 	* [BM算法](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/patternmatch/BM.java)
 * 排序
-	* 插入排序
-	* 选择排序
-	* 冒泡排序
-	* 合并排序
-	* 快速排序
-	* Shell排序
-	* 基数排序-低位优先
-	* 基数排序-高位优先
+	* [插入排序](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/sort/InsertSort.java)
+	* [选择排序](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/sort/SelectSort.java)
+	* [冒泡排序](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/sort/BubbleSort.java)
+	* [合并排序](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/sort/MergeSort.java)
+	* [快速排序](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/sort/QuickSort.java)
+	* [Shell排序](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/sort/ShellSort.java)
+	* [基数排序-低位优先](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/sort/RadixSortLastSignificantDigitalFirst.java)
+	* [基数排序-高位优先](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/sort/RadixSortMostSignificantDigitalFirst.java)
 * 搜索
-	* 顺序查找
-	* 二分查找
-	* Hash存储冲突解决
-		* 开式寻址法
-		* 地址链接法
+	* [顺序查找](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/search/Sequence.java)
+	* [二分查找](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/search/Binary.java)
+	* Hash搜索以及Hash存储冲突解决
+		* [开式寻址法](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/search/HashSearchOpenAddress.java)
+		* [地址链接法](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/search/HashSearchLinkedAddress.java)
 * 树
 	* 树的线性表示
-		* 括号表示法
-		* 中序层号表示法
+		* [括号表示法](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/representation/BracketRepresentation.java)
+		* [中序层号表示法](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/representationi/PreorderWithLevelRepresentation.java)
 	* 树的遍历
-		* 层序遍历
-		* 后序遍历
-		* 前序遍历
+		* [层序遍历](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/visit/LevelOrderVisit.java)
+		* [后序遍历](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/visit/PostOrderVisit.java)
+		* [前序遍历](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/visit/PreOrderVisit.java)
 	* 二叉树
-		* 二叉树的线性表示 - 带两个标志位的数组
+		* [二叉树的线性表示 - 带两个标志位的数组](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/bitree/representation/PreOrderWithTwoFlagsList.java)
 		* 二叉树遍历
-			* 前序遍历
-			* 中序遍历
-			* 后序遍历
-			* 层序遍历
-			* 逆转指针法遍历
-		* 堆和堆排序
-		* 穿线树和穿线排序
+			* [前序遍历](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/bitree/visit/PreOrderVisit.java)
+			* [中序遍历](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/bitree/visit/MidOrderVisit.java)
+			* [后序遍历](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/bitree/visit/PostOrderVisit.java)
+			* [层序遍历](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/bitree/visit/LevelOrderVisit.java)
+			* [逆转指针法遍历](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/bitree/visit/ReversePointerVisit.java)
+		* [堆和堆排序](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/bitree/heap/Heap.java)
+		* [穿线树和穿线排序](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/bitree/thread/ThreadTree.java)
 		* 查找树
-			* 构建最佳查找树的一般算法
-			* 构建最小加权外部路径 - Huffman算法
-			* 构建最小加权外部路径并保持结点顺序 - Hu-Tucker算法
+			* [构建最佳查找树的一般算法](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/bitree/searchtree/BestSearchTree.java)
+			* [构建最小加权外部路径 - Huffman算法](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/bitree/searchtree/HuffmanTree.java)
+			* [构建最小加权外部路径并保持结点顺序 - Hu-Tucker算法](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/bitree/searchtree/HuTuckerBestSearchTree.java)
 	* 解答树
-		* 背包问题
-		* 皇后问题
+		* [背包问题](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/answertree/BagProblem.java)
+		* [皇后问题](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/answertree/NQueensProblem.java)
 * 图
 	* 无向图
-		* 深度优先遍历，广度优先遍历
+		* [深度优先遍历，广度优先遍历](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/graph/NonDirGraph.java)
 	* 有向图
-		* 深度优先遍历，广度优先遍历
+		* [深度优先遍历，广度优先遍历](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/graph/DirGraph.java)
 * 零碎
+	* [多项式中缀变后缀](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/Polynomial.java)
 

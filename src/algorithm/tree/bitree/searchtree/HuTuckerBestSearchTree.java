@@ -22,7 +22,7 @@ import algorithm.tree.bitree.visit.MidOrderVisit;
  * 
  * 具体参考施伯乐和蔡子经的《数据结构》一书
  */
-public class HuTuckerBestSerchTree {
+public class HuTuckerBestSearchTree {
 	
 	private BiTreeNode<Character> root;//最终形成的二叉树根节点；
 	private List<Entry> originalList;//最初给定的数据
@@ -191,7 +191,7 @@ public class HuTuckerBestSerchTree {
 		e.frequency = 8;
 		list.add(e);
 		
-		HuTuckerBestSerchTree htbs = new HuTuckerBestSerchTree();
+		HuTuckerBestSearchTree htbs = new HuTuckerBestSearchTree();
 		htbs.construct(list);
 		
 		System.out.println("Mid order visiting the Bi-Tree constructed by Hu-Tucker algorithm:");
