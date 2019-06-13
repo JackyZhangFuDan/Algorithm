@@ -12,14 +12,4 @@ public class DirGraph extends Graph {
 		
 	}
 
-	@Override
-	public void widthFirstVisit() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 }
