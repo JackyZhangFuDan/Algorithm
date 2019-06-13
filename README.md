@@ -24,7 +24,7 @@
 * 树
 	* 树的线性表示
 		* [括号表示法](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/representation/BracketRepresentation.java)
-		* [中序层号表示法](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/representationi/PreorderWithLevelRepresentation.java)
+		* [中序层号表示法](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/representation/PreorderWithLevelRepresentation.java)
 	* 树的遍历
 		* [层序遍历](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/visit/LevelOrderVisit.java)
 		* [后序遍历](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/visit/PostOrderVisit.java)
