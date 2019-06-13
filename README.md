@@ -4,8 +4,8 @@
 内容索引
 -----
 * 模式匹配
-	* KMP算法
-	* BM算法
+	* [KMP算法](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/patternmatch/KMP.java)
+	* [BM算法](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/patternmatch/BM.java)
 * 排序
 	* 插入排序
 	* 选择排序
