@@ -48,6 +48,11 @@
 		* [皇后问题](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/tree/answertree/NQueensProblem.java)
 * 图
 	* [深度优先遍历，广度优先遍历](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/graph/Graph.java)
+	* [无向图的最小生成树，Prim算法和Kruskal算法](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/graph/NonDirGraph.java)
+	* [有向图单个顶点到其它顶点的最短距离，Dijkstra算法](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/graph/DirGraph.java)
+	* [有向图各个顶点之间的最短距离，Floyd算法](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/graph/DirGraph.java)
+	* [有向图拓扑排序算法](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/graph/DirGraph.java)
+	* [有向图的关键路径](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/graph/DirGraph.java)
 * 零碎
 	* [多项式中缀变后缀](https://github.com/JackyZhangFuDan/Algorithm/blob/master/src/algorithm/Polynomial.java)
 
