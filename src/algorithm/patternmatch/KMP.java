@@ -97,6 +97,7 @@ public class KMP {
 	}
 	
 	public static void main(String[] args) {
+		/*
 		//fail case
 		KMP b = new KMP(
 				new Character[]{'a','m','n','l','m','n','l','t','t','n','l','p','d','z','m','n','l','m','l','c','e','g','h','p','d','z','m','n','l','m','l','b'},
@@ -110,6 +111,13 @@ public class KMP {
 				new Character[]{'p','d','z','m','n','l','m','n'}
 		);
 		b.doMatch();
+		b.doMatchBook();
+		*/
+		
+		KMP b = new KMP(
+				new Character[]{'a','b','c','d','e','f','f','g'},
+				new Character[]{'e','?','g'}
+		);
 		b.doMatchBook();
 		
 	}
