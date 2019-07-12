@@ -52,7 +52,6 @@ public class Heap {
 			
 			index = (this.data.length - 2) / 2 - i++;
 		}
-		
 	}
 	
 	/*
