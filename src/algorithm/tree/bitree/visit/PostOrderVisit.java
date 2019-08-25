@@ -1,5 +1,7 @@
 package algorithm.tree.bitree.visit;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 import algorithm.tree.bitree.BiTreeNode;
@@ -61,6 +63,46 @@ public class PostOrderVisit {
 		}
 	}
 	
+	/*
+	 * 第二种解法，用一个指针记录上次打印的节点，比照该节点与当前栈顶节点左右子结点的关系，从而决定：1）打印当前节点；2）左子结点进栈；3）右子节点进栈
+	 */
+	public void postOrderTraversal(BiTreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
+        
+        if(root == null){
+            return;
+        }
+        
+        Stack<BiTreeNode> stack = new Stack<BiTreeNode>();
+        BiTreeNode pre = null;
+        stack.push(root);
+        BiTreeNode cur = null;
+        
+        while(!stack.isEmpty() ){
+            cur = stack.peek();
+            if(cur.getLeftNode() == null && cur.getRightNode() == null){
+                System.out.println(cur.getData());;
+                pre = cur;
+                stack.pop();
+            }else if(cur.getRightNode() !=null && cur.getRightNode() == pre){
+                System.out.println(cur.getData());
+                pre = cur;
+                stack.pop();
+            }else if(cur.getLeftNode() != null && cur.getLeftNode() == pre){
+                if(cur.getRightNode() != null){
+                    stack.push(cur.getRightNode());
+                }else{
+                    System.out.println(cur.getData());
+                    pre = cur;
+                    stack.pop();
+                }
+            }else if(cur.getLeftNode() != null){
+                stack.push(cur.getLeftNode());
+            }else if(cur.getRightNode() != null){
+                stack.push(cur.getRightNode());
+            }
+        }
+    }
 	public static void main(String[] args) {
 		/*
 				A
@@ -93,7 +135,9 @@ public class PostOrderVisit {
 		
 		PostOrderVisit pov = new PostOrderVisit();
 		pov.visit(root);
-
+		
+		System.out.println("Visit by method 2: ");
+		pov.postOrderTraversal(root);
 	}
 
 }
